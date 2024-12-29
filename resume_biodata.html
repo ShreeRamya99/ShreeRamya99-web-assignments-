@@ -1,0 +1,133 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Personal details</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+            color: #333;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 1rem;
+            text-align: center;
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            background-color: #555;
+            padding: 0.5rem;
+        }
+
+        nav a {
+            color: #fff;
+            margin: 0 1rem;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        section {
+            padding: 2rem;
+        }
+
+        .content {
+            display: none;
+        }
+
+        .active {
+            display: block;
+        }
+
+        footer {
+            text-align: center;
+            padding: 1rem;
+            background-color: #333;
+            color: #fff;
+            margin-top: 2rem;
+        }
+
+        /* Styling specific to Resume and Bio-data */
+        h2 {
+            color: #444;
+        }
+
+        ul {
+            list-style-type: disc;
+            margin-left: 1.5rem;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>My Personal Details</h1>
+    </header>
+
+    <nav>
+        <a href="#resume" class="nav-link" data-target="resume">Resume</a>
+        <a href="#biodata" class="nav-link" data-target="biodata">Bio-data</a>
+    </nav>
+
+    <main>
+        <!-- Resume Section -->
+        <section id="resume" class="content active">
+            <h2>Resume</h2>
+            <p><strong>Name:</strong> Ramyashree C</p>
+            <p><strong>Objective:</strong> To secure a challenging position...</p>
+            <h3>Education</h3>
+            <ul>
+                <li>Bachelor of Science in Computer Science</li>
+                <li> City Engineering college</li>
+            </ul>
+            <h3>Skills</h3>
+            <ul>
+                <li>HTML, CSS, JavaScript</li>
+                <li>Python, Java</li>
+            </ul>
+        </section>
+
+        <!-- Bio-data Section -->
+        <section id="biodata" class="content">
+            <h2>Bio-data</h2>
+            <p><strong>Name:</strong> Ramyashree C</p>
+            <p><strong>Date of Birth:</strong> January 16, 2004</p>
+            <p><strong>Gender:</strong> Female</p>
+            <p><strong>Address:</strong> #01 Krishna Rukmini Nilaya opposite to Ganesha temple</p>
+            <p><strong>Marital Status:</strong> Single</p>
+            <p><strong>Languages Known:</strong> English, Kannada, telugu</p>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Ramyashree. All rights reserved.</p>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('.nav-link').on('click', function (event) {
+                event.preventDefault();
+                const target = $(this).data('target');
+
+                // Hide all sections
+                $('.content').removeClass('active');
+
+                // Show the selected section
+                $(`#${target}`).addClass('active');
+            });
+        });
+    </script>
+</body>
+</html>
